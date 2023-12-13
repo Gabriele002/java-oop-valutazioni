@@ -1,14 +1,14 @@
 package org.lessons.java.valutazioni;
 
-    public  class Counter {
-        private static int counter = 0;
+public class IdStudent {
+        private static int counter = 1000;
 
-
+    //ATTRIBUTI
         private int id;
-        public Counter(){
+        public IdStudent(){
             id = counter++;
         }
-
+    //GET E SETTER
         public final int getId() {
             return id;
         }
@@ -16,5 +16,12 @@ package org.lessons.java.valutazioni;
         public void setId(int id) {
             this.id = id;
         }
+        //METODI
+
+    @Override
+    public String toString() {
+        return "IdStudent" +
+                "id=" + id;
     }
 }
+
