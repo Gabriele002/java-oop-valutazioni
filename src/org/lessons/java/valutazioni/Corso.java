@@ -36,6 +36,38 @@ public class Corso {
             System.out.println("Lo studente che vuoi rimuovere non esiste");
         }
     }
+    public int numeroPromossi() {
+        int contatore = 0;
+        for (int i = 0; i < studenti.size(); i++) {
+            Studente student = studenti.get(i);
+            if (student.promosso()) {
+                contatore++;
+            }
+        }
+        return contatore;
+    }
+
+    public int numeroBocciati() {
+        int contatore = 0;
+        for (int i = 0; i < studenti.size(); i++) {
+            Studente student = studenti.get(i);
+            if (!student.promosso()) {
+                contatore++;
+            }
+        }
+        return contatore;
+    }
+
+    public int percentualeBocciati() {
+        int promossi = numeroBocciati();
+        return (promossi * 100) / studenti.size();
+    }
+
+    public int percentualePromossi() {
+        int promossi = numeroPromossi();
+        return (promossi * 100) / studenti.size();
+    }
+
 
     @Override
     public String toString() {

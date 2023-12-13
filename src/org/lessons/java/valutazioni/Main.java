@@ -12,8 +12,11 @@ public class Main {
            Studente studente = new Studente(idStudent.getId(), random.nextInt(0,101), random.nextInt(0,6));
            jaita99.aggiungiStudente(studente);
         }
-
         System.out.println(jaita99);
+
+
+        System.out.println("La percentuale di promossi e': "+jaita99.percentualePromossi()+ "%");
+        System.out.println("La percentuale di bocciati e': "+ jaita99.percentualeBocciati() + "%");
     }
 
 }

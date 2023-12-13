@@ -1,5 +1,6 @@
 package org.lessons.java.valutazioni;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class Studente {
@@ -40,11 +41,27 @@ public class Studente {
         }
     }
 
+
+
+
     @Override
     public String toString() {
-        return "Id Student= " + idStudent + "\n" +
+        return "\n" +"Id Student= " + idStudent + "\n" +
                 "Assenza totali= " + perAssenza + "\n" +
                 "Media voti= " + mediaVoti + "\n" +
                 (promosso() ? " Promosso" : " Bocciato") + "\n" ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Studente studente = (Studente) o;
+        return idStudent == studente.idStudent;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idStudent);
     }
 }
